@@ -1,10 +1,8 @@
-def count_ways(distance): 
-if distance == 0: 
-return 1 
-total_ways = 0 
-for i in range(1, min(distance, 7) + 1): 
-total_ways += count_ways(distance - i) 
-return total_ways 
-distance = 18 
-total_ways = count_ways(distance) 
-print(total_ways)
+numbers = set()
+for a in range(1, 8):
+    for b in range(1, 8):
+        for c in range(1, 8):
+            if a + b + c > 8:
+                continue
+            numbers.add(f"{a}{b}{c}")
+print(len(numbers))
